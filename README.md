@@ -27,5 +27,5 @@
 
 <h2>🌐 Hospedagem</h2>
 
-<a href="https://optimustech-kc.netlify.app/">Acesse</a>
+<a href="https://optimus-tech-landingpage.vercel.app/">Acesse</a>
 
