@@ -3,11 +3,84 @@
 
 @include reset
 
+body
+  overflow-x: hidden
+
 .container
   display: flex
   justify-content: space-between
   align-items: center
   width: 75%
+
+  @include responsive-xl
+      width: 90%
+
+.subtitle-bg
+  padding: 4px 12px
+  background-color: $second-bg-color
+  border-radius: 16px
+
+.btn
+  @extend %button-format
+
+.active
+  display: block
+
+.second-btn
+  text-align: center
+  border: 1px solid $light-color
+  padding: 10px 18px
+  border-radius: 5px 
+  color: $light-color
+  text-decoration: none
+
+  margin: 25px 0
+
+.sidenav
+  background-color: $text-hover-color
+  height: 450px
+  width: 100%
+  position: absolute
+  z-index: 10
+  right: 0
+  top: -100%
+  padding: 50px 20px
+  opacity: 1
+
+  transition: 0.5s
+
+  img
+    display: block
+    position: absolute
+    z-index: 2
+    top: 40px
+    right: 40px
+    cursor: pointer
+
+  ul
+    list-style: none
+    text-align: center
+    margin-top: 30px
+    margin-bottom: 50px
+
+    li
+      padding: 5px 10px
+      margin: 18px 0
+      a
+        font-size: 1.3rem
+        color: $light-color
+        text-decoration: none
+
+  a
+    display: block
+  
+  .btn
+    text-align: center
+    text-decoration: none
+
+    &:hover
+      background: $primary-color
+      font-weight: normal
 
 //Header
 
@@ -16,14 +89,25 @@ header
   display: flex
   justify-content: center
 
+  .container
+    justify-content: space-between
+    align-items: center
+
   .header-menu
     display: flex
     align-items: center
 
-    img
+    .logo
       margin-right: 118px
+
+      @include responsive-l
+        margin-right: 50px
   
     nav
+
+      @include responsive-m
+        display: none
+
       ul
         list-style: none
         display: flex
@@ -37,12 +121,22 @@ header
   
   .header-buttons
 
+    @include responsive-m
+        display: none
+
     .btn
       @extend %button-format
 
     a
       margin: 0 16px
       @extend %link-format
+
+  .hamburguer
+    cursor: pointer
+    display: none
+
+    @include responsive-m
+      display: block
 
 // Section 1
 
@@ -51,9 +145,10 @@ header
   justify-content: center
 
   .container
-    flex-direction: column
-    justify-content: center 
-    padding: 120px 0
+    @extend %container-tp2-format
+    
+    @include responsive-m
+      margin-bottom: 50px
 
     h3
       @extend %subtitle-format
@@ -63,27 +158,256 @@ header
       @extend %title-format
       margin-bottom: 24px
 
+      @include responsive-sm
+        font-size: 2.3rem
+  
+
     p
       @extend %p-format
       width: 60%
       text-align: center
+
+      @include responsive-l
+        width: 80%
+      
+      @include responsive-m
+        width: 100%
+        font-size: 1rem
+
+      @include responsive-sm
+        font-size: 0.9rem
+
+      
   
   .sc1-data
     display: flex
     margin-top: 107px
     justify-content: space-around
 
+    @include responsive-m
+      flex-direction: column
+      align-items: center
+
+    @include responsive-sm
+        margin-top: 50px
+
     .data-detail
       width: 22%
-      //border: 1px solid red
+
+      @include responsive-m
+        text-align: center
+        width: 70%
+        margin-bottom: 50px
 
       h1
         font-size: 4rem
         margin-bottom: 12px
         color: $primary-color
+
+        @include responsive-l
+          font-size: 3rem
       
       p
         text-align: left
         width: 100%
         margin-bottom: 8px
-        
+
+        @include responsive-l
+          font-size: 1rem
+
+        @include responsive-m
+          text-align: center
+      
+// Section 2
+
+.sc2-vagas
+  display: flex
+  justify-content: center
+
+  .container
+    @extend %container-tp2-format
+
+    @include responsive-m
+      margin-bottom:  50px
+
+    @include responsive-sm
+      margin-top:  0px
+  
+  img
+    width: 100%
+
+    @include responsive-sm
+      display: none
+
+
+  h3
+    margin-bottom: 16px
+    @extend %subtitle-format
+  
+  h1
+    margin-bottom: 20px
+    @extend %title-format
+
+    @include responsive-sm
+      text-align: center
+      font-size: 2rem
+    
+  
+  p
+    margin-bottom: 64px
+    @extend %p-format
+
+    @include responsive-sm
+      font-size: 1rem
+  
+  .categories
+    width: 55%
+    padding: 0
+
+    @include responsive-l
+      width: 85%
+    
+    @include responsive-m
+      width: 100%
+      margin-top: 0
+
+    &-title
+      display: block
+      width: 100%
+      margin: 64px 0 32px 0
+      text-align: left
+
+      @include responsive-m
+        margin-top: 32px
+    
+    .vaga-card
+      padding: 28px 24px
+      width: 100%
+      border: 1px solid #EAECF0
+      border-radius: 16px
+      margin: 0 0 24px 0
+
+      .vaga-title
+        margin: 0 0 32px 0
+        font-size: 1.1rem
+        text-align: left
+      
+      .vaga-details
+        display: flex
+
+        p
+          font-size: 1rem
+          margin: 0 24px 0 0 
+          width: normal
+          text-align: left
+          
+// Section 3
+
+.sc3-depoimentos
+  display: flex
+  justify-content: center
+
+.sc3-container
+  @extend %container-tp2-format 
+  margin-top: 0
+  padding:64px
+  background-color: $second-bg-color
+
+  @include responsive-m
+    width: 100%
+  
+  @include responsive-m
+    padding: 64px 10px
+    margin-bottom:  50px
+  
+  h3
+    margin-bottom: 1rem
+    @extend %subtitle-format
+
+    @include responsive-sm
+      text-align: center
+      font-size: 0.9rem
+  
+  h1
+    @extend %title-format
+    font-size: 2.5rem
+    text-align: center
+    margin-bottom: 32px
+
+    @include responsive-l
+      font-size: 1.8rem
+
+    @include responsive-m
+      padding: 1.7rem
+
+    @include responsive-sm
+      font-size: 1.3rem
+
+  img
+    margin-bottom: 16px
+  
+  .p-type
+    @extend %p-format
+    font-size: 0.9rem
+    margin-top: 4px
+
+//Footer
+
+footer
+  display: flex
+  justify-content: center
+  background: $bg-color-footer
+
+  .footer-container
+    padding: 96px 0
+    @extend %container-tp2-format
+    margin-bottom: 0
+
+    @include responsive-m
+      padding: 64px 10px
+      margin-top:  50px
+      width: 100%
+
+    h1
+      @extend %title-format
+      margin-bottom: 20px
+      font-size: 3rem
+
+      @include responsive-l
+      font-size: 2.5rem
+
+      @include responsive-m
+        font-size: 2.3
+    
+    p
+      margin-bottom: 40px
+      @extend %p-format
+
+    form
+      text-align: center
+      width: 50%
+      margin-bottom: 32px
+
+      @include responsive-l
+        width: 100%
+
+      input
+        width: 50%
+        font-size: 1rem
+        padding: 12px 16px
+        border: 1px solid #ccc
+        border-radius: 5px
+        outline: 0
+        margin-right: 16px
+      
+      .btn
+        @extend %button-format
+
+      a
+        @extend %link-format
+
+    .copy
+      @extend %p-format
+      color: $second-text-color
+      font-size: 1rem
+      margin-bottom: 0

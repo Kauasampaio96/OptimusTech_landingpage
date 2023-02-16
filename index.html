@@ -17,7 +17,14 @@
   <!--Icon-->
   <link rel="icon" href="assets/favicon.png">
 
+  <!--script-->
+  <script type="text/javascript" src="index.js"></script>
+
+  <script id="script" src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+  </script>
+
   <!--Animations-->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -28,8 +35,24 @@
 
       <div class="header-menu">
 
-        <img src="assets/logo.png" alt="logo">
+        <img class="logo" src="assets/logo.png" alt="logo">
         
+        <div id="sidenav" class="sidenav">
+
+          <img onclick="fecharMenu()" width="45px" src="assets/close.png" alt="close">
+
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Produtos</a></li>
+            <li><a href="#">Recursos</a></li>
+            <li><a href="#">Sobre nós</a></li>
+          </ul>
+
+          <a class="second-btn" href="#">Entrar</a>
+          <a class="btn" href="#">Cadastrar</a>
+
+        </div><!--sidenav-->
+
         <nav>
           <ul>
             <li><a href="#">Home</a></li>
@@ -46,12 +69,14 @@
         <a class="btn" href="#">Cadastrar</a>
       </div><!--header buttons-->
 
+      <img onclick="abrirMenu()" class="hamburguer" width="32px" src="assets/hamburger.png" alt="hamburger">
+
     </div><!--container-->
 
   </header> <!--Header-->
 
   <!--Section1-->
-  <div class="sc1-about">
+  <div class="sc1-about" data-aos="fade-right">
 
     <div class="container">
 
@@ -100,6 +125,141 @@
     </div><!--Container-->
 
   </div> <!--Section1-->
+
+
+  <!--Section2-->
+
+  <section class="sc2-vagas" data-aos="fade-down">
+    
+    <div class="container">
+
+      <h3 class="subtitle-bg">Vagas Abertas</h3>
+
+      <h1>Estamos procurando por talentos</h1>
+
+      <p>Somos uma equipe 100% remota com pessoas do Brasil inteiro.</p>
+
+      <img src="assets/Hero.png" alt="Hero">
+
+      
+      <div class="container categories">
+
+        <p class="categories-title"><b>Design</b></p>
+
+        <div data-aos="fade-right" class="vaga-card">
+
+          <p class="vaga-title"><b>Product Designer</b></p>
+
+          <div class="vaga-details">
+            <p>Full-time</p>
+            <p>Faixa Salarial: R$7.000</p>
+          </div><!--vaga details-->
+          
+
+        </div><!--vaga card-->
+
+        <div data-aos="fade-right" class="vaga-card">
+
+          <p class="vaga-title"><b>UX Designer</b></p>
+
+          <div class="vaga-details">
+            <p>Full-time</p>
+            <p>Faixa Salarial: R$6.000</p>
+          </div><!--vaga details-->
+          
+
+        </div><!--vaga card-->
+
+        <p class="categories-title"><b>Desenvolvimento de Software</b></p>
+
+        <div data-aos="fade-right"  class="vaga-card">
+
+          <p class="vaga-title"><b>Desenvolvedor(a) iOS</b></p>
+
+          <div class="vaga-details">
+            <p>Full-time</p>
+            <p>Faixa Salarial: R$8.000</p>
+          </div><!--vaga details-->
+          
+
+        </div><!--vaga card-->
+
+        <div data-aos="fade-right" class="vaga-card">
+
+          <p class="vaga-title"><b>Desenvolvedor(a) Front-end</b></p>
+
+          <div class="vaga-details">
+            <p>Full-time</p>
+            <p>Faixa Salarial: R$7.000</p>
+          </div><!--vaga details-->
+          
+
+        </div><!--vaga card-->
+
+        <div data-aos="fade-right"  class="vaga-card">
+
+          <p class="vaga-title"><b>Desenvolvedor(a) Back-end</b></p>
+
+          <div class="vaga-details">
+            <p>Full-time</p>
+            <p>Faixa Salarial: R$8.000</p>
+          </div><!--vaga details-->
+          
+
+        </div><!--vaga card-->
+
+      </div><!--categories-->
+
+    </div><!--container-->
+
+  </section><!--Section 2-->
+
+
+  <!--Section 3-->
+
+  <section data-aos="fade-down" class="sc3-depoimentos">
+
+    <div class="container sc3-container">
+
+      <h3>Veja o que nossos colaboradores falam sobre nós</h3>
+
+      <h1>OptimusTech se importa com a saúde dos seus colaboradores e sempre procura nos dar todo tipo de auxílio possível.</h1>
+
+      <img src="assets/dep.png" alt="depoimnetos">
+
+      <p><b>Júlia Castro</b></p>
+      <p class="p-type">Desenvolvedora Web</p>
+
+    </div>
+
+  </section><!--Section 3-->
+
+  <!--Footer-->
+
+  <footer>
+
+    <div class="container footer-container">
+
+      <h1>Acompanhe as nossas oportunidades</h1>
+
+      <p>Seja o primeiro a saber quando novas vagas serão abertas!</p>
+
+      <form>
+        <input placeholder="Seu e-mail" type="email">
+        <a href="#" class="btn">Cadastrar</a>
+      </form>  
+
+      <p class="copy">© 2022 OptimusTech. Todos os direitos reservados.</p>
+
+    </div>
+
+  </footer><!--Section 4-->
+
+  <script>
+    AOS.init({
+      duration: 1000
+    });
+  </script>
 
 </body>
 </html>
