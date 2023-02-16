@@ -1,0 +1,89 @@
+@import 'variables'
+@import 'utilities'
+
+@include reset
+
+.container
+  display: flex
+  justify-content: space-between
+  align-items: center
+  width: 75%
+
+//Header
+
+header
+  padding-top: 28px 
+  display: flex
+  justify-content: center
+
+  .header-menu
+    display: flex
+    align-items: center
+
+    img
+      margin-right: 118px
+  
+    nav
+      ul
+        list-style: none
+        display: flex
+        justify-content: space-around
+
+        li
+          margin:0 16px
+
+          a
+            @extend %link-format
+  
+  .header-buttons
+
+    .btn
+      @extend %button-format
+
+    a
+      margin: 0 16px
+      @extend %link-format
+
+// Section 1
+
+.sc1-about
+  display: flex
+  justify-content: center
+
+  .container
+    flex-direction: column
+    justify-content: center 
+    padding: 120px 0
+
+    h3
+      @extend %subtitle-format
+      margin-bottom: 24px
+    
+    h1
+      @extend %title-format
+      margin-bottom: 24px
+
+    p
+      @extend %p-format
+      width: 60%
+      text-align: center
+  
+  .sc1-data
+    display: flex
+    margin-top: 107px
+    justify-content: space-around
+
+    .data-detail
+      width: 22%
+      //border: 1px solid red
+
+      h1
+        font-size: 4rem
+        margin-bottom: 12px
+        color: $primary-color
+      
+      p
+        text-align: left
+        width: 100%
+        margin-bottom: 8px
+        
