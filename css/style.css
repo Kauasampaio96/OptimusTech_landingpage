@@ -112,16 +112,23 @@ body {
 }
 .sidenav ul {
   list-style: none;
-  text-align: center;
+  text-align: left;
   margin-top: 30px;
   margin-bottom: 50px;
+  padding-left: 20px;
 }
 .sidenav ul li {
+  display: flex;
+  align-items: center;
   padding: 5px 10px;
   margin: 18px 0;
 }
+.sidenav ul li i {
+  color: #fff;
+  margin-right: 15px;
+}
 .sidenav ul li a {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #fff;
   text-decoration: none;
 }
@@ -297,6 +304,7 @@ header .hamburguer {
 }
 .sc2-vagas img {
   width: 100%;
+  border-radius: 10px;
 }
 @media (max-width: 580px) {
   .sc2-vagas img {
